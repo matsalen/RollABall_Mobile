@@ -24,12 +24,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //movimentoX = Input.GetAxis("Horizontal");
-        //movimentoY = Input.GetAxis("Vertical");
+        movimentoY = Input.GetAxis("Vertical");
 
-        movimento = Input.acceleration;
+        //movimento = Input.acceleration;
+        forca = new Vector3(movimentoX, 0, movimentoY);
 
-        forca.x = movimento.x;
-        forca.z = movimento.y;
+        //forca.x = movimento.x;
+        //forca.z = movimento.y;
         forca *= velocidade;
         rb.AddForce(forca);
     }
